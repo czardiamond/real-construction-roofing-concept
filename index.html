@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f6f1">
+  <meta name="description" content="Concept by Diamond: an independent, unofficial website concept for Real Construction Roofing Shelter in Lagos, Nigeria. Demo only; no enquiries are collected.">
+  <meta name="author" content="Diamond">
+  <title>Real Construction Roofing Concept | Concept by Diamond</title>
+  <style>
+    :root {
+      --ink: #17241f;
+      --muted: #65716c;
+      --paper: #f6f6f1;
+      --white: #fff;
+      --line: #e3e8e2;
+      --green: #1f684f;
+      --green-dark: #164e3b;
+      --mint: #e8f2eb;
+      --gold: #e5a83a;
+      --shadow: 0 18px 55px rgba(29, 48, 39, .09);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .preview-note {
+      padding: 10px 16px;
+      background: #17241f;
+      color: #f5f8f4;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .025em;
+    }
+    .preview-note strong { color: #f4c76f; font-weight: 700; }
+    header { padding: 22px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; min-width: 0; }
+    .brand-mark {
+      display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto;
+      border-radius: 14px; background: var(--green); color: white;
+    }
+    .brand-name { font-size: 13px; line-height: 1.28; font-weight: 760; letter-spacing: -.015em; max-width: 210px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; font-size: 13px; font-weight: 650; color: #52615a; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--green); }
+    .button {
+      min-height: 46px; padding: 0 19px; border: 0; border-radius: 999px; display: inline-flex;
+      align-items: center; justify-content: center; gap: 9px; background: var(--green); color: white;
+      font-size: 13px; font-weight: 750; text-decoration: none; cursor: pointer;
+      transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+    .button:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(31,104,79,.18); }
+    .button.secondary { background: var(--white); color: var(--ink); border: 1px solid var(--line); }
+    .button.secondary:hover { background: #f1f5f0; box-shadow: none; }
+    .button.gold { background: var(--gold); color: #1d261e; }
+    .button.gold:hover { background: #d99b2e; }
+    .hero { padding: 42px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; gap: 54px; align-items: center; }
+    .eyebrow { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 640px; margin: 17px 0 17px; font-size: clamp(42px, 6vw, 68px); line-height: 1.02; letter-spacing: -.055em; }
+    h1 span { color: var(--green); }
+    .hero-copy { max-width: 500px; color: var(--muted); font-size: 16px; margin: 0 0 25px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .hero-mini { display: flex; align-items: center; gap: 10px; margin-top: 23px; color: #66736d; font-size: 12px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .roof-art {
+      min-height: 395px; position: relative; overflow: hidden; border-radius: 32px;
+      background: linear-gradient(150deg, #dcebe0 0%, #c8dfd0 47%, #adcdb9 100%);
+      box-shadow: var(--shadow); isolation: isolate;
+    }
+    .roof-art:before {
+      content: ""; position: absolute; z-index: -1; width: 460px; height: 460px; right: -100px; top: -210px;
+      border: 1px solid rgba(31,104,79,.16); border-radius: 50%; box-shadow: 0 0 0 30px rgba(255,255,255,.10), 0 0 0 70px rgba(255,255,255,.08);
+    }
+    .sun { position: absolute; width: 70px; height: 70px; border-radius: 50%; background: #efc87b; top: 49px; right: 66px; box-shadow: 0 0 0 15px rgba(239,200,123,.16); }
+    .art-label { position: absolute; top: 25px; left: 25px; background: rgba(255,255,255,.76); border: 1px solid rgba(255,255,255,.7); border-radius: 999px; padding: 8px 13px; color: #38564a; font-size: 11px; font-weight: 750; }
+    .roof-svg { position: absolute; inset: auto 0 0; width: 100%; height: 90%; }
+    .art-caption { position: absolute; bottom: 20px; left: 22px; padding: 13px 16px; border-radius: 15px; background: rgba(255,255,255,.92); box-shadow: 0 8px 30px rgba(19,52,36,.11); font-size: 12px; font-weight: 730; }
+    .art-caption span { display: block; color: var(--muted); font-size: 10px; font-weight: 500; margin-top: 2px; }
+    .section { padding: 73px 0; }
+    .section.white { background: var(--white); }
+    .section-heading { max-width: 580px; margin-bottom: 32px; }
+    h2 { margin: 11px 0 10px; font-size: clamp(30px, 4vw, 43px); line-height: 1.08; letter-spacing: -.04em; }
+    .section-heading p { margin: 0; color: var(--muted); font-size: 14px; }
+    .service-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .service-card { background: #f7f8f5; border: 1px solid #e9ede8; border-radius: 19px; padding: 20px 17px 19px; min-height: 157px; }
+    .service-icon { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 16px; border-radius: 12px; background: var(--mint); color: var(--green); }
+    .service-card h3 { font-size: 13px; margin: 0 0 6px; letter-spacing: -.01em; }
+    .service-card p { color: var(--muted); margin: 0; font-size: 11px; line-height: 1.5; }
+    .enquiry-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 42px; align-items: start; }
+    .contact-panel { position: sticky; top: 20px; padding: 27px; border-radius: var(--radius); background: #eff5ef; }
+    .contact-panel h3 { margin: 0 0 9px; font-size: 22px; letter-spacing: -.03em; }
+    .contact-panel p { color: var(--muted); font-size: 13px; margin: 0 0 19px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 11px; padding: 13px 0; border-top: 1px solid #dce7dd; }
+    .contact-row svg { color: var(--green); flex: 0 0 auto; margin-top: 2px; }
+    .contact-row span { display: block; font-size: 10px; color: var(--muted); margin-bottom: 2px; }
+    .contact-row a { text-decoration: none; font-weight: 720; font-size: 13px; overflow-wrap: anywhere; }
+    .contact-actions { display: grid; gap: 9px; margin-top: 14px; }
+    .contact-actions .button { width: 100%; }
+    .form-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 4vw, 34px); box-shadow: 0 12px 40px rgba(29,48,39,.045); }
+    .form-card h3 { margin: 0 0 4px; font-size: 24px; letter-spacing: -.035em; }
+    .form-intro { color: var(--muted); font-size: 13px; margin: 0 0 23px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border: 0; margin: 0; padding: 0; min-width: 0; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 11px; font-weight: 740; color: #35433b; }
+    input, select, textarea { width: 100%; border: 1px solid #dce4dd; border-radius: 11px; padding: 12px 13px; color: var(--ink); background: white; outline: none; font-size: 13px; }
+    input:disabled, select:disabled, textarea:disabled { opacity: 1; color: #65716c; background: #fafbf8; cursor: not-allowed; -webkit-text-fill-color: #65716c; }
+    input:focus, select:focus, textarea:focus { border-color: #71a78e; box-shadow: 0 0 0 3px rgba(31,104,79,.1); }
+    textarea { resize: vertical; min-height: 94px; }
+    .file-box { border: 1px dashed #aec4b4; border-radius: 13px; background: #f7faf7; padding: 15px; }
+    .file-box input { padding: 0; border: 0; border-radius: 0; background: transparent; }
+    .file-help { display: block; margin-top: 7px; font-size: 10px; color: var(--muted); }
+    .photo-preview { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .photo-preview figure { margin: 0; width: 70px; height: 70px; border-radius: 10px; overflow: hidden; background: #eaf0eb; }
+    .photo-preview img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .privacy-note { margin: 15px 0 17px; padding: 11px 13px; border-radius: 11px; background: #f3f6f2; color: #54655b; font-size: 11px; }
+    .privacy-note strong { color: #294e3b; }
+    .form-submit { width: 100%; }
+    .form-result { display: none; margin-top: 14px; padding: 13px 14px; border: 1px solid #e7d19e; border-radius: 12px; background: #fff8e8; color: #57451f; font-size: 12px; }
+    .form-result.show { display: block; }
+    .process { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .process-card { padding: 23px; border: 1px solid var(--line); border-radius: 19px; background: white; }
+    .number { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--mint); color: var(--green); font-size: 11px; font-weight: 800; margin-bottom: 15px; }
+    .process-card h3 { font-size: 14px; margin: 0 0 6px; }
+    .process-card p { color: var(--muted); font-size: 12px; margin: 0; }
+    .cta-band { padding: 36px; border-radius: 26px; background: #1c3529; color: white; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .cta-band h2 { font-size: clamp(25px, 3.4vw, 36px); max-width: 510px; margin: 0 0 8px; }
+    .cta-band p { margin: 0; color: #ccdbd0; font-size: 13px; }
+    .cta-band .button { flex: 0 0 auto; }
+    footer { padding: 27px 0 35px; color: var(--muted); font-size: 10px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .footer-note { max-width: 650px; }
+    .footer-note strong { color: var(--ink); }
+    .footer-contact { display: flex; flex-direction: column; gap: 5px; text-align: right; }
+    .footer-contact a { text-decoration: none; }
+    @media (max-width: 900px) {
+      .hero-grid { gap: 30px; }
+      .service-grid { grid-template-columns: repeat(3, 1fr); }
+      .enquiry-layout { grid-template-columns: .85fr 1.15fr; gap: 22px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 28px, 540px); }
+      .preview-note { font-size: 10px; padding: 9px 10px; }
+      header { padding: 15px 0; }
+      .nav-links { display: none; }
+      .nav > .button { min-height: 40px; padding: 0 13px; font-size: 11px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .brand-name { font-size: 11px; max-width: 156px; }
+      .hero { padding: 31px 0 49px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 27px; }
+      h1 { font-size: clamp(43px, 13vw, 62px); margin-top: 13px; }
+      .hero-copy { font-size: 14px; }
+      .button { min-height: 44px; padding-inline: 15px; font-size: 12px; }
+      .roof-art { min-height: 285px; border-radius: 24px; }
+      .sun { width: 52px; height: 52px; right: 48px; top: 45px; }
+      .art-label { top: 15px; left: 15px; font-size: 9px; }
+      .section { padding: 53px 0; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+      .service-card { min-height: 146px; padding: 16px 13px; }
+      .service-icon { margin-bottom: 12px; }
+      .enquiry-layout { grid-template-columns: 1fr; gap: 16px; }
+      .contact-panel { position: static; padding: 22px; }
+      .form-card { padding: 22px 17px; }
+      .form-grid { grid-template-columns: 1fr; gap: 13px; }
+      .field.full { grid-column: auto; }
+      .process { grid-template-columns: 1fr; gap: 10px; }
+      .process-card { padding: 18px; }
+      .cta-band { display: block; padding: 25px 21px; border-radius: 22px; }
+      .cta-band .button { margin-top: 19px; width: 100%; }
+      .footer-inner { display: block; }
+      .footer-contact { text-align: left; margin-top: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="preview-note"><strong>Concept by Diamond</strong> · Independent, unofficial concept · Not the company’s official website</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Real Construction Roofing Shelter concept preview, home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M3 11.4 12 4l9 7.4M5.5 10v9.2h13V10M9 19v-5.6h6V19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-name">Real Construction<br>Roofing Shelter</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a><a href="#how-it-works">How it works</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="button" href="#contact">Explore demo <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Roofing projects · Lagos, Nigeria</div>
+          <h1>Your next roof <span>starts here.</span></h1>
+          <p class="hero-copy">Planning a new roof or looking after the one you have? Explore this enquiry-page concept, then use the public business contacts if you wish to get in touch.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Preview enquiry <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="tel:08084408542">Call 0808 440 8542</a>
+          </div>
+          <div class="hero-mini"><span class="dot"></span><span>Roof installation, renovation, woodwork, coating & maintenance</span></div>
+        </div>
+        <div class="roof-art" role="img" aria-label="Decorative illustration of a home and roof, not a company project photograph">
+          <span class="art-label">An independent design concept</span><span class="sun"></span>
+          <svg class="roof-svg" viewBox="0 0 600 440" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <path d="M0 350 600 300v140H0z" fill="#8fb49b" opacity=".55"/>
+            <path d="m90 245 206-147 214 146v196H90z" fill="#f6f5ed"/>
+            <path d="M60 253 294 80l246 174-28 29L294 126 89 280z" fill="#315f4a"/>
+            <path d="m95 252 199-147 213 151" fill="none" stroke="#477c60" stroke-width="8" stroke-linecap="round"/>
+            <path d="M165 211v-29l40-30v31M246 150v-35l43-31v37" fill="none" stroke="#c6d7c7" stroke-width="5"/>
+            <path d="M132 284h102v157H132z" fill="#d9e8db"/><path d="M145 297h76v61h-76z" fill="#9ec4ad"/>
+            <path d="M184 297v61M145 328h76" stroke="#f3f7f1" stroke-width="5"/>
+            <path d="M322 287h119v154H322z" fill="#d8e8da"/><path d="M338 303h86v65h-86z" fill="#a9cbb5"/>
+            <path d="M381 303v65M338 335h86" stroke="#f3f7f1" stroke-width="5"/>
+            <path d="M260 346h45v95h-45z" fill="#986944"/><circle cx="294" cy="393" r="3" fill="#edcb83"/>
+            <path d="M43 441h514" stroke="#3c7656" stroke-width="8" stroke-linecap="round"/>
+            <path d="M52 375c33-18 56-15 82 5M454 387c33-22 61-19 92-1" stroke="#6b9e78" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+          </svg>
+          <div class="art-caption">Concept by Diamond<span>A fresh take on the roofing enquiry experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Publicly listed roofing services</div>
+          <h2>What does your roof need?</h2>
+          <p>The company advertises these roofing services on its <a href="https://realconstructionroofingshelter.com.ng/" target="_blank" rel="noopener noreferrer">public website</a>. Contact the business directly to confirm your project requirements.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="m3 11 9-7 9 7M5.5 10v10h13V10M9 20v-6h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Roof installation</h3><p>Planning a new roofing project?</p></article>
+          <article class="service-card"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 19h16M6 16l2-9 4 4 4-7 2 12M10 16l.5-2M14 16l.5-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Roof renovation</h3><p>Refreshing or repairing an existing roof.</p></article>
+          <article class="service-card"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="m3 11 9-7 9 7M6 10v9h12v-9M8 14h8M9 19v-3M15 19v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Roof woodwork</h3><p>Woodwork for roof structures and repairs.</p></article>
+          <article class="service-card"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3c-2.7 4.1-6 7.1-6 11a6 6 0 0 0 12 0c0-3.9-3.3-6.9-6-11Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 15a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Roof coating</h3><p>Coating work for your roofing project.</p></article>
+          <article class="service-card"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M3 12h3m12 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1M12 8v4l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/></svg></div><h3>Roof maintenance</h3><p>Ongoing care and maintenance enquiries.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap enquiry-layout">
+        <aside class="contact-panel">
+          <div class="eyebrow">Public business contacts</div>
+          <h3>Contact the business</h3>
+          <p>These phone numbers and email are listed on the company’s <a href="https://realconstructionroofingshelter.com.ng/contact/" target="_blank" rel="noopener noreferrer">public contact page</a>. Direct contact links are separate from this demo.</p>
+          <div class="contact-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M7 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-2l-5-2-2 3a14 14 0 0 1-7-7l3-2-3-5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span>Call</span><a href="tel:08084408542">0808 440 8542</a><br><a href="tel:08063389596">0806 338 9596</a></div>
+          </div>
+          <div class="contact-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4zM4 6l8 7 8-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span>Email</span><a href="mailto:realconstructionshelters@gmail.com">realconstructionshelters@gmail.com</a></div>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="https://wa.me/2348084408542?text=Hello%2C%20I%E2%80%99m%20enquiring%20about%20a%20roofing%20project.%20How%20can%20I%20get%20a%20quote%3F" target="_blank" rel="noopener noreferrer">Open WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="tel:08063389596">Call 0806 338 9596</a>
+          </div>
+        </aside>
+
+        <div class="form-card">
+          <div class="eyebrow">Interface demo · no data collection</div>
+          <h3>Callback form concept</h3>
+          <p class="form-intro">A preview of the enquiry experience. All fields and uploads are disabled—please do not enter personal information.</p>
+          <div id="enquiry-form" role="group" aria-label="Disabled callback form demonstration">
+            <fieldset class="form-grid" disabled>
+              <div class="field"><label for="name">Your name</label><input id="name" type="text" placeholder="Demo name field" autocomplete="off"></div>
+              <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="Demo phone field" autocomplete="off"></div>
+              <div class="field full"><label for="service">What do you need help with?</label><select id="service"><option value="">Choose a service (demo only)</option><option>Roof installation</option><option>Roof renovation</option><option>Roof woodwork</option><option>Roof coating</option><option>Roof maintenance</option><option>Not sure yet</option></select></div>
+              <div class="field full"><label for="details">A little about the project</label><textarea id="details" placeholder="Project details would appear here in a working form."></textarea></div>
+              <div class="field full"><label for="photos">Add roof photos</label><div class="file-box"><input id="photos" type="file" accept="image/*" multiple><span class="file-help">Photo uploads are disabled in this concept. No files can be selected or shared.</span></div></div>
+            </fieldset>
+            <div class="privacy-note"><strong>Demo only:</strong> This page does not collect, transmit, or save form submissions. The button below only reveals a demonstration message. Public business contact links are separate from the demo.</div>
+            <button class="button form-submit" id="preview-request" type="button" aria-controls="form-result" aria-expanded="false">Preview callback request <span aria-hidden="true">→</span></button>
+            <div class="form-result" id="form-result" role="status" aria-live="polite">Demo complete. No information was collected, sent, or saved, and no callback was requested. This is an independent concept by Diamond, not the company’s official website.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="how-it-works">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">A simple starting point</div>
+          <h2>Make the first step easy.</h2>
+          <p>A proposed enquiry flow, shown here as a non-collecting interface demo.</p>
+        </div>
+        <div class="process">
+          <article class="process-card"><div class="number">01</div><h3>Explore the services</h3><p>See the roofing services listed by the business.</p></article>
+          <article class="process-card"><div class="number">02</div><h3>Preview the interface</h3><p>View the disabled callback form and its demo response.</p></article>
+          <article class="process-card"><div class="number">03</div><h3>Choose a direct contact</h3><p>Public call, email, and WhatsApp links are available separately.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:48px">
+      <div class="wrap cta-band">
+        <div><h2>Have a roofing question?</h2><p>Choose a direct contact option and tell the team what you need.</p></div>
+        <a class="button gold" href="https://wa.me/2348084408542?text=Hello%2C%20I%E2%80%99m%20enquiring%20about%20a%20roofing%20project.%20How%20can%20I%20get%20a%20quote%3F" target="_blank" rel="noopener noreferrer">Open WhatsApp chat <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-note"><strong>Concept by Diamond</strong> · Independent frontend portfolio demo.<br><strong>Unofficial concept—not the company’s official website.</strong> Created as a sample for Real Construction Roofing Shelter. Public business service and contact details are shown for context only. No endorsement or affiliation is claimed. The disabled demo form does not collect, transmit, or save submissions.</div>
+      <div class="footer-contact"><a href="tel:08084408542">0808 440 8542</a><a href="tel:08063389596">0806 338 9596</a><a href="mailto:realconstructionshelters@gmail.com">Email the company</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const button = document.getElementById('preview-request');
+      const result = document.getElementById('form-result');
+      button.addEventListener('click', () => {
+        result.classList.add('show');
+        button.setAttribute('aria-expanded', 'true');
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    })();
+  </script>
+</body>
+</html>
