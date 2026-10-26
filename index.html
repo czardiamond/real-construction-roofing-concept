@@ -183,6 +183,18 @@
       .footer-contact { text-align: left; margin-top: 15px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition-duration: .01ms !important; } }
+
+    /* Motion refresh: craft, inspection, and contact paths stay grounded. */
+    @media (prefers-reduced-motion: no-preference){
+      .hero-copy>*{animation:roof-arrive .7s cubic-bezier(.2,.7,.2,1) both}.hero-copy h1{animation-delay:.08s}.hero-copy .lede{animation-delay:.15s}.hero-copy .button{animation-delay:.22s}
+      .hero-visual,.inspection-card{animation:roof-inspect-in .85s ease .12s both}.process-card{animation:roof-rise .65s ease both}.process-card:nth-child(2){animation-delay:.12s}.process-card:nth-child(3){animation-delay:.24s}.contact-panel,.form-card{transition:transform .25s ease,box-shadow .25s ease}.contact-panel:hover,.form-card:focus-within{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+      .form-result:not(:empty){animation:roof-result-in .35s ease both}
+    }
+    @keyframes roof-arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    @keyframes roof-inspect-in{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+    @keyframes roof-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    @keyframes roof-result-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
   </style>
 </head>
 <body>
